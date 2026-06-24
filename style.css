@@ -95,3 +95,10 @@ p {
   font-size: 1.3rem; /* Texte du paragraphe plus grand */
   margin-bottom: 20px;
 }
+
+/* Style spécifique pour la ligne des fonctionnalités */
+.features {
+  margin-top: 15px; /* Crée un léger espace avec le texte du dessus */
+  font-size: 1.25rem; /* Ajuste légèrement la taille si besoin */
+}
+
