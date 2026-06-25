@@ -345,3 +345,24 @@ p, .features {
   margin-right: 15px;
 }
 
+/* ==========================================================================
+   🏠 ENCADRÉ SPÉCIFIQUE POUR LES FEATURES (PAGE ACCUEIL)
+   ========================================================================== */
+.features-box {
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 4px solid #017ce3; /* Une ligne bleue sur le côté pour attirer l'œil */
+  padding: 15px 20px;
+  border-radius: 4px;
+  margin: 30px 0;
+  text-align: left; /* Aligne le texte à gauche pour un effet "liste" plus propre */
+}
+
+.features-box .features {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.features-box strong {
+  color: #ffcc00; /* Met le mot "Features:" en jaune doré style Mario */
+}
