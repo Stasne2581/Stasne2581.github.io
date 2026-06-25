@@ -429,3 +429,36 @@ p, .features {
   text-decoration: underline;
 }
 
+/* Style pour l'espace contenant les boutons */
+.social-buttons {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* Style de base des boutons */
+.social-buttons a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+/* Couleur YouTube */
+.btn-youtube {
+  background-color: #ff0000;
+}
+.btn-youtube:hover {
+  background-color: #cc0000;
+}
+
+/* Couleur Discord */
+.btn-discord {
+  background-color: #5865F2;
+}
+.btn-discord:hover {
+  background-color: #404eed;
+}
