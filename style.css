@@ -481,6 +481,6 @@ p, .features {
 }
 
 .icon-youtube {
-  height: 80px !important; /* Plus haut pour contrer le fait que le sprite d'origine soit plus petit */
+  height: 85px !important; /* Plus haut pour contrer le fait que le sprite d'origine soit plus petit */
   width: auto !important;
 }
