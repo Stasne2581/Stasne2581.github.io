@@ -22,43 +22,39 @@ body {
   min-height: 100vh;
 }
 
-/* HEADER (Prend toute la largeur du site mais centre son contenu à l'intérieur) */
+/* HEADER (La barre prend 100% de la largeur de l'écran) */
 header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;             
+  width: 100%;             /* Fait toute la longueur de la page */
   display: flex;
-  justify-content: center; /* Centre le conteneur interne */
+  justify-content: center; /* Centre le contenu interne */
   background: rgba(17, 24, 39, 0.85);
   backdrop-filter: blur(8px);
   z-index: 1000;
-  padding: 0 20px;         /* Sécurité minimale sur les côtés */
-}
-
-/* Nouveau bloc invisible qui encadre le logo et le menu au centre */
-header::before, header::after {
-  content: none; /* Nettoyage si besoin */
-}
-
-/* Appliquons directement un comportement propre pour regrouper les éléments */
-header {
   box-sizing: border-box;
 }
 
-/* Pour que le logo et le nav se partagent l'espace de manière fixe au centre */
+/* CONTENEUR INTERNE DU HEADER (Garde vos boutons alignés et stables au centre) */
+header {
+  padding: 0 max(20px, calc((100% - 1200px) / 2 + 30px)); 
+  justify-content: space-between;
+}
+
+/* Rectangle noir gauche */
 .logo {
   width: 120px;
   height: 40px;
   background: black;
   border-radius: 6px;
-  margin: 15px 0; /* Ajoute l'espace vertical */
+  margin: 15px 0; 
 }
 
-/* Menu droite (Ajusté pour être centré avec des marges globales) */
+/* Menu droite */
 nav {
   display: flex;
-  gap: 8px;                /* Espace équilibré pour la police large */
+  gap: 8px;                
   margin: 15px 0;
 }
 
@@ -69,19 +65,11 @@ nav a {
   border-radius: 6px;
   transition: 0.2s;
   font-weight: 600; 
-  font-size: 1rem;         /* Taille de police parfaite pour la lisibilité */
+  font-size: 1rem;         
 }
 
 nav a:hover {
   background: rgba(255, 255, 255, 0.15); 
-}
-
-/* Ajustement global : Force les deux blocs du header à ne pas s'éloigner à l'infini */
-header {
-  justify-content: space-between;
-  max-width: 1200px;       /* ◄ Limite l'écartement maximal du menu */
-  left: 50%;               /* Centre le bloc sur l'écran */
-  transform: translateX(-50%);
 }
 
 /* CONTENU PRINCIPAL */
@@ -94,10 +82,32 @@ header {
   max-width: 1000px; 
   width: 90%;
   
-  margin: 180px auto 60px auto; 
+  /* ◄ MARGE AUGMENTÉE (280px) : Descend le bloc noir pour laisser la place au logo */
+  margin: 280px auto 60px auto; 
   text-align: center; 
+  position: relative; /* Nécessaire pour placer le logo au-dessus */
   
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* LOGO DU JEU AUTOMATIQUE AU-DESSUS DE LA BOÎTE NOIRE */
+.container::before {
+  content: "";
+  display: block;
+  background-image: url('sprites/game_logo.png'); /* ◄ Chemin vers votre logo */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  /* Dimensions du logo */
+  width: 350px;       /* Ajustez la largeur de votre logo ici */
+  height: 120px;      /* Ajustez la hauteur de votre logo ici */
+  
+  /* Positionnement volant au-dessus */
+  position: absolute;
+  top: -140px;        /* Le propulse au-dessus de la boîte noire */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 h1 {
