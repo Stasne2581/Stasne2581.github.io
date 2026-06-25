@@ -435,25 +435,30 @@ p, .features {
   text-align: center;
 }
 
-/* On nettoie complètement les liens (pas de fond, pas de bordure) */
+/* Base des liens : on nettoie tout et on supprime le déplacement */
 .social-buttons a {
   display: inline-block;
   margin: 0 20px;
-  background: none !important;    /* Supprime le fond bleu ou rouge */
-  padding: 0 !important;          /* Supprime les espaces internes */
+  background: none !important;
+  padding: 0 !important;
   border-radius: 0;
   text-decoration: none;
-  transition: transform 0.2s ease;
+  vertical-align: middle; /* Aligne les deux logos sur la même ligne */
+  transition: opacity 0.2s ease; /* Remplace le déplacement par un simple effet d'opacité */
 }
 
-/* Effet au survol */
+/* Au survol : simple effet de lumière/opacité, plus de mouvement ! */
 .social-buttons a:hover {
-  transform: scale(1.15); /* Légère animation d'agrandissement */
+  transform: none !important; /* Bloque définitivement tout déplacement */
+  opacity: 0.8;
 }
 
-/* Taille augmentée pour les logos */
+/* Force les deux logos à faire STRICTEMENT la même taille et plus gros */
 .social-icon {
-  height: 60px; /* Augmenté de 40px à 60px pour qu'ils soient plus gros */
-  width: auto;
+  width: 70px !important;  /* Ajuste cette valeur pour les rendre encore plus gros si besoin */
+  height: 70px !important; /* Garder width et height identiques force la même taille */
+  object-fit: contain;     /* Évite que l'image soit déformée */
   display: block;
+  box-shadow: none !important; /* Supprime d'éventuels reflets CSS */
+  filter: none !important;     /* Supprime d'éventuels filtres CSS */
 }
