@@ -252,7 +252,9 @@ p, .features {
 }
 
 
-/* 🤝 PAGE CONTRIBUTE - ACCUEIL DE LA GRILLE */
+/* ==========================================================================
+   🤝 PAGE CONTRIBUTE (CARTES DE RÔLES AVEC IMAGES LOCALES)
+   ========================================================================== */
 .intro-text {
   margin-bottom: 35px !important;
 }
@@ -270,10 +272,13 @@ p, .features {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-  padding: 20px;
+  padding: 25px 20px;
   width: 260px;
   text-align: center;
   transition: transform 0.2s, background 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre le contenu horizontalement dans la carte */
 }
 
 .role-card:hover {
@@ -281,11 +286,19 @@ p, .features {
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* Style de vos images personnalisées (pinceau, ordi, note) */
+.role-icon {
+  width: 55px;         /* Ajustez la largeur de vos icônes ici */
+  height: 55px;        /* Ajustez la hauteur ici */
+  margin-bottom: 15px; /* Crée un espace sous l'icône avant le titre */
+  object-fit: contain; /* Conserve le ratio d'origine sans déformation */
+}
+
 .role-card h3 {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   font-size: 1.4rem;
-  color: #ffcc00; /* Une couleur dorée style Mario pour les titres de rôles */
+  color: #ffcc00; /* Couleur dorée style Mario pour les titres de rôles */
 }
 
 .role-card p {
@@ -307,7 +320,7 @@ p, .features {
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  background-color: #5865F2; /* Bleu/Violet officiel Discord */
+  background-color: #5865F2; 
   color: #ffffff !important;
   text-decoration: none;
   font-size: 1.5rem !important;
@@ -323,7 +336,7 @@ p, .features {
   background-color: #4752C4;
   transform: scale(1.05) !important;
   box-shadow: 0 6px 20px rgba(88, 101, 242, 0.6);
-  padding-left: 35px !important; /* Annule le décalage de la section download */
+  padding-left: 35px !important; /* Annule proprement le décalage hérité de download */
 }
 
 .discord-icon {
@@ -331,3 +344,4 @@ p, .features {
   height: auto;
   margin-right: 15px;
 }
+
