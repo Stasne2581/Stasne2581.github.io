@@ -474,6 +474,8 @@ p, .features {
   object-fit: contain;
 }
 
+
+
 /* Compensation précise des tailles de tes images sprites */
 .icon-discord {
   height: 65px !important; /* Taille de référence pour Discord */
@@ -483,4 +485,35 @@ p, .features {
 .icon-youtube {
   height: 85px !important; /* Plus haut pour contrer le fait que le sprite d'origine soit plus petit */
   width: auto !important;
+}
+
+
+/* ==========================================================================
+   ❓ PAGE FAQ
+   ========================================================================== */
+
+.faq-container {
+  margin-top: 30px;
+  text-align: left; /* Aligne les questions à gauche pour une lecture naturelle */
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.faq-question {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffcc00; /* Jaune doré style Mario */
+  margin-bottom: 10px;
+}
+
+.faq-answer {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
 }
