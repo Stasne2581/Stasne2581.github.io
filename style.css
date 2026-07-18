@@ -11,16 +11,23 @@ body {
   font-family: 'MonProjetFont', Arial, sans-serif;
   color: white;
   
-  /* Image de fond identique pour tout le site */
-  background-image: url('background.png'); 
+  /* Utilise le bon chemin vers le dossier sprites */
+  background-image: url('sprites/background.png') !important; 
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: #111827 !important; 
   
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+/* Sécurité pour qu'aucun bloc intermédiaire ne masque le fond */
+.wrapper, .main-content, main {
+  background: transparent !important;
 }
 
 /* ==========================================================================
