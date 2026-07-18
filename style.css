@@ -10,19 +10,40 @@ body {
   margin: 0;
   font-family: 'MonProjetFont', Arial, sans-serif;
   color: white;
-  
-  /* Utilise le bon chemin vers le dossier sprites */
-  background-image: url('sprites/background.png') !important; 
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-color: #111827 !important; 
+  background-color: #111827; /* Couleur de secours sombre pendant le chargement */
   
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Élément virtuel qui gère uniquement l'image de fond et son flou */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Reste bien caché derrière tout ton contenu */
+  
+  background-image: url('sprites/background.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* C'est ici que tu gères l'intensité du flou (ex: 8px) */
+  filter: blur(8px); 
+  
+  /* Évite l'apparition de bordures blanches causées par le flou sur les côtés */
+  transform: scale(1.05); 
+}
+
+/* Sécurité pour qu'aucun bloc intermédiaire ne masque le fond */
+.wrapper, .main-content, main {
+  background: transparent !important;
 }
 
 /* Sécurité pour qu'aucun bloc intermédiaire ne masque le fond */
